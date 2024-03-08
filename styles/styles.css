@@ -1,36 +1,76 @@
 :root {
-  --violet: hsl(257, 40%, 49%);
+  --violet: #674baf;
   --soft-magenta: hsl(300, 69%, 71%);
 }
-.open-sans {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
-.poppins-regular {
+.ff-accent {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-.poppins-semibold {
+.ff-accent-semibold {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
 }
-body {
+.ff-body {
   font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-optical-sizing: auto;
   font-variation-settings: "wdth" 100;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
+  color: white;
+  text-align: center;
+  background-color: var(--violet);
+  background-image: url("/images/bg-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+}
+img {
+  display: flex;
+}
+a {
+  color: white;
+}
+.content-wrapper {
+  width: 100%;
+  max-width: 304px;
+  margin: auto;
+}
+.huddle-logo {
+  width: 100%;
+  max-width: 120px;
+  margin-bottom: 70px;
+}
+.banner {
+  width: 100%;
+  max-width: 296px;
+  margin-bottom: 60px;
+}
+.main-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+}
+.copy {
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: white;
 }
 /*# sourceMappingURL=./styles.css.map */
