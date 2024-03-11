@@ -3,16 +3,23 @@
 	--soft-magenta: hsl(300, 69%, 71%);
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 .ff-accent {
 	font-family: "Poppins", sans-serif;
-	font-weight: 400;
 	font-style: normal;
+	font-weight: 400;
 }
 
 .ff-accent-semibold {
-	font-family: "Poppins", sans-serif;
+	.ff-accent;
 	font-weight: 600;
-	font-style: normal;
 }
 
 .ff-body {
@@ -23,27 +30,18 @@
   font-variation-settings: "wdth" 100;
 }
 
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border-width: 0;
-}
-
 body {
 	.ff-body;
 	color: white;
 	text-align: center;
+	display: flex;
+	min-height: 100svh;
+	margin: 0;
+	padding: 2.5rem .5rem 1rem;
 	background-color: var(--violet);
 	background-image: url("/images/bg-mobile.svg");
 	background-repeat: no-repeat;
-	background-size: 100%;
-	margin: 0;
+	background-size:contain;
 }
 
 img {
@@ -57,36 +55,36 @@ a {
 .content-wrapper {
 	width: 100%;
 	max-width: 304px;
-	min-height: 100vh;
-	margin: auto;
-	padding: 2.5rem .5rem 0;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 
 .huddle-logo {
 	width: 100%;
 	max-width: 120px;
-	margin-bottom: 70px;
+	margin-bottom: 4.375rem;
 }
 
 .banner {
 	width: 100%;
-	max-width: 296px;
-	margin-bottom: 60px;
+	margin-bottom: 3.75rem;
 }
 
 .main-heading {
 	.ff-accent-semibold;
 	font-size: 1.5rem;
 	line-height: 2.25rem;
-	margin-bottom: 1rem;
+	margin: 0 auto 1rem;
 }
 
 .copy {
 	line-height: 1.5rem;
-	margin-bottom: 1.5rem;
+	margin: 0 auto 1.5rem;
 }
 
 .button {
+	.ff-accent;
 	display: grid;
 	align-content: center;
 	font-size: .75rem;
@@ -96,24 +94,31 @@ a {
 	text-decoration: none;
 	border-radius: 4rem;
 	box-shadow: rgba(0, 0, 0, 0.27) 1px 3px 5px 0;
-	margin-bottom: 3.75rem;
+	max-width: 200px;
+	margin: 0 auto  4rem;
+	text-align: center;
 }
 
 .social-nav {
 	display: flex;
 	justify-content: center;
 	gap: .75rem;
-	margin-bottom: 6rem;
+}
+
+footer {
+	flex-grow: 1;
+	display: flex;
+	margin-top: 2rem;
 }
 
 .social-logo {
 	display: flex;
 	width: 1.75rem;
 	height: 1.75rem;
+	text-indent: -100vw;
 	overflow: hidden;
 	border: solid thin white;
 	border-radius: 100%;
-	text-indent: -100vw;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -133,8 +138,67 @@ a {
 .attribution {
 	font-size: 11px;
 	text-align: center;
+	margin: auto auto 0;
 }
 
 .attribution a {
 	color: white;
+}
+
+@media (min-width: 60rem) {
+	body {
+		text-align: revert;
+		background-image: url("/images/bg-desktop.svg");
+		background-size:cover;
+	}
+	
+	.content-wrapper {
+		max-width: 1280px;
+	}
+	
+	.huddle-logo {
+		max-width: 200px;
+		margin-bottom: 104px;
+	}
+	
+	.main-content {
+		display: flex;
+		gap: 3.75rem;
+		margin-bottom: 2rem;
+	}
+
+	.banner {
+		max-width: 696px;
+		margin-bottom: 0;
+	}
+
+	.main-heading {
+		font-size: 2.5rem;
+		line-height: 3.75rem;
+		margin-top: 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.copy {
+		font-size: 1.125rem;
+		line-height: 1.688rem;
+		margin-bottom: 2rem;
+	}
+
+	.button {
+		font-size: 1.125rem;
+		height: 3.5rem;
+		box-shadow: rgba(0, 0, 0, 0.26) 2px 4px 9px 3px;
+		margin: 0;
+	}
+
+	.social-nav {
+		justify-content: end;
+	}
+
+	.social-logo {
+		width: 2.5rem;
+		height: 2.5rem;
+		background-size: 50% 50%;
+	}
 }
