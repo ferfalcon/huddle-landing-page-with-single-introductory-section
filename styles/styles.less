@@ -1,6 +1,7 @@
 :root {
 	--violet: rgb(103, 75, 175);
-	--soft-magenta: hsl(300, 69%, 71%);
+	--magenta: hsl(322, 100%, 66%);
+	--soft-magenta: hsl(300, 69%, 71%); 
 }
 
 html {
@@ -97,6 +98,14 @@ a {
 	max-width: 200px;
 	margin: 0 auto  4rem;
 	text-align: center;
+	transition: color, background;
+	transition-duration: .3s;
+	transition-timing-function: ease-out;
+
+	&:hover {
+		color: white;
+		background: var(--soft-magenta);
+	}
 }
 
 .social-nav {
@@ -113,26 +122,33 @@ footer {
 
 .social-logo {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 1.75rem;
 	height: 1.75rem;
 	text-indent: -100vw;
 	overflow: hidden;
 	border: solid thin white;
 	border-radius: 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
+	transition: border-color;
+	transition-duration: .3s;
+	transition-timing-function: ease-out;
 
-.social-logo--facebook {
-	background-image: url("/images/facebook.svg");
-}
+	svg {
+		height: .8rem;
+		width: auto;
+	}
 
-.social-logo--twitter {
-	background-image: url("/images/twitter.svg");
-}
+	&:hover {
+		border-color: var(--soft-magenta);
 
-.social-logo--instagram {
-	background-image: url("/images/instagram.svg");
+		path {
+			fill: var(--magenta);
+			transition: fill;
+			transition-duration: .3s;
+			transition-timing-function: ease-out;
+		}
+	}
 }
 
 .attribution {
@@ -145,7 +161,7 @@ footer {
 	color: white;
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 80rem) {
 	body {
 		text-align: revert;
 		background-image: url("/images/bg-desktop.svg");
@@ -199,6 +215,9 @@ footer {
 	.social-logo {
 		width: 2.5rem;
 		height: 2.5rem;
-		background-size: 50% 50%;
+
+		svg {
+			height: 1.125rem;
+		}
 	}
 }
