@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://github.com/ferfalcon/huddle-landing-page-with-single-introductory-section)
+- [Solution URL](https://github.com/ferfalcon/huddle-landing-page-with-single-introductory-section/)
 - [Live Site URL](https://ferfalcon.github.io/huddle-landing-page-with-single-introductory-section/)
 
 ## My process
