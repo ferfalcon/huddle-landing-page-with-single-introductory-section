@@ -17,7 +17,7 @@
   --ty-copy: normal var(--fw-regular) var(--fs-300)/var(--lh-500) var(--ff-main);
   --ty-button: normal var(--fw-regular) var(--fs-100) var(--ff-accent);
 }
-@media (min-width: 80rem) {
+@media (min-width: 84rem) {
   :root {
     --ty-heading: normal var(--fw-semibold) var(--fs-800)/var(--lh-500) var(--ff-accent);
     --ty-copy: normal var(--fw-regular) var(--fs-400)/var(--lh-500) var(--ff-main);
@@ -38,118 +38,120 @@ img {
   vertical-align: middle;
   font-style: italic;
 }
-.body {
-  display: flex;
-  margin: 0;
-  padding: 2.5rem 0.5rem 1rem;
-  min-height: 100svh;
-  text-align: center;
-  color: var(--cl-neutral-100);
+body {
   font-family: var(--ff-main);
+  color: var(--cl-neutral-100);
+  text-align: center;
+  min-height: 100svh;
+  margin: 0;
   background: top / contain no-repeat url("../images/bg-mobile.svg") var(--cl-secondary-500);
 }
-@media (min-width: 60rem) {
-  .body {
+@media (min-width: 84rem) {
+  body {
+    text-align: initial;
     background-size: cover;
-  }
-}
-@media (min-width: 80rem) {
-  .body {
-    text-align: revert;
     background-image: url("../images/bg-desktop.svg");
   }
 }
-.main {
-  width: 100%;
-  max-width: 304px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+main {
+  display: grid;
+  margin: 2.375rem auto 0;
+  width: 94%;
+  max-width: 19rem;
 }
-@media (min-width: 80rem) {
-  .main {
-    max-width: 1280px;
+@media (min-width: 84rem) {
+  main {
+    margin-top: 4rem;
+    max-width: 80rem;
   }
 }
 .huddle-logo {
-  width: 100%;
   max-width: 120px;
-  margin-bottom: 4.375rem;
 }
-@media (min-width: 80rem) {
+@media (min-width: 84rem) {
   .huddle-logo {
-    max-width: 200px;
-    margin-bottom: 104px;
+    max-width: 12.5rem;
   }
 }
-@media (min-width: 80rem) {
-  .article {
-    display: flex;
-    gap: 3.75rem;
-    margin-bottom: 2rem;
+article {
+  margin-block-start: 4.375rem;
+}
+@media (min-width: 84rem) {
+  article {
+    margin-block-start: 6.5rem;
+    display: grid;
+    gap: 0 3.75rem;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: auto auto 1fr;
   }
 }
-.banner {
-  width: 100%;
-  margin-bottom: 3.75rem;
+article img {
+  display: block;
+  margin-inline: auto;
 }
-@media (min-width: 80rem) {
-  .banner {
-    max-width: 696px;
-    margin-bottom: 0;
+@media (min-width: 84rem) {
+  article img {
+    max-width: 43.5rem;
+    grid-row: span 3;
   }
 }
-.main-heading {
+article h1 {
   font: var(--ty-heading);
-  margin-block: 0 1rem;
+  margin-block: 3.75rem 0;
 }
-@media (min-width: 80rem) {
-  .main-heading {
-    margin-block: 2.5rem 1.5rem;
+@media (min-width: 84rem) {
+  article h1 {
+    grid-column: 2;
+    margin-block-start: 2.5rem;
   }
 }
-.copy {
+article p {
   font: var(--ty-copy);
-  margin-block: 0 1.5rem;
+  margin-block: 1rem 0;
 }
-@media (min-width: 80rem) {
-  .copy {
-    margin-block-end: 2rem;
+@media (min-width: 84rem) {
+  article p {
+    grid-column: 2;
+    margin-block-start: 1.5rem;
   }
 }
-.button {
-  display: grid;
-  align-content: center;
-  font-size: 0.75rem;
-  height: 2.5rem;
+article a {
+  display: block;
+  align-self: start;
+  font: var(--ty-button);
   color: var(--cl-secondary-500);
-  background: white;
+  background: var(--cl-neutral-100);
+  text-align: center;
   text-decoration: none;
   border-radius: 4rem;
-  box-shadow: rgba(0, 0, 0, 0.27) 1px 3px 5px 0;
-  max-width: 200px;
-  margin: 0 auto  4rem;
-  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.27) 0.063rem 0.188rem 0.313rem 0;
+  max-width: 12.5rem;
+  margin: 1.5rem auto 0;
+  padding-block: 0.69rem;
   transition: color, background;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
-.button:hover {
-  color: white;
+article a:hover {
+  color: var(--cl-neutral-100);
   background: var(--cl-accent-300);
 }
-@media (min-width: 80rem) {
-  .button {
-    font-size: 1.125rem;
-    height: 3.5rem;
-    box-shadow: rgba(0, 0, 0, 0.26) 2px 4px 9px 3px;
-    margin: 0;
+@media (min-width: 84rem) {
+  article a {
+    margin-inline: 0;
+    box-shadow: rgba(0, 0, 0, 0.26) 0.125rem 0.25rem 0.563rem 0.188rem;
   }
 }
 .social-nav {
   display: flex;
   justify-content: center;
   gap: 0.75rem;
+  margin-top: 4rem;
+}
+@media (min-width: 84rem) {
+  .social-nav {
+    justify-self: end;
+  }
 }
 .social-logo {
   display: flex;
@@ -159,26 +161,14 @@ img {
   height: 1.75rem;
   text-indent: -100vw;
   overflow: hidden;
-  border: solid thin white;
+  border: solid thin var(--cl-neutral-100);
   border-radius: 100%;
-  transition: border-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
+  transition: border-color 0.3s ease-out;
 }
-@media (min-width: 80rem) {
+@media (min-width: 84rem) {
   .social-logo {
-    justify-content: end;
     width: 2.5rem;
     height: 2.5rem;
-  }
-}
-.social-logo svg {
-  width: auto;
-  height: 0.8rem;
-}
-@media (min-width: 80rem) {
-  .social-logo svg {
-    height: 1.125rem;
   }
 }
 .social-logo:hover {
@@ -186,9 +176,16 @@ img {
 }
 .social-logo:hover path {
   fill: var(--cl-accent-500);
-  transition: fill;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-out;
+  transition: fill 0.3s ease-out;
+}
+.social-logo svg {
+  width: auto;
+  height: 0.8rem;
+}
+@media (min-width: 84rem) {
+  .social-logo svg {
+    height: 1.125rem;
+  }
 }
 .signature {
   position: absolute;
