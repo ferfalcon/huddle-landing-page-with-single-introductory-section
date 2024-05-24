@@ -72,7 +72,7 @@ body {
 
 main {
 	display: grid;
-	margin: 2.375rem auto 0;
+	margin: 2.375rem auto auto;
 	width: 94%;
 	max-width: 19rem;
 
@@ -97,14 +97,16 @@ article {
 		margin-block-start: 6.5rem;
 		display: grid;
 		gap: 0 3.75rem;
-		grid-template-columns: min-content 1fr;
+		grid-template-columns: max-content 1fr;
 		grid-template-rows: auto auto 1fr;
 	}
 
 	img {
 		display: block;
 		margin-inline: auto;
-	
+		width: 100%;
+		max-width: 18.5rem;
+		
 		@media (min-width: 84rem) {	
 			max-width: 43.5rem;
 			grid-row: span 3;
@@ -160,8 +162,7 @@ article {
 	}
 }
 
-
-.social-nav {
+nav {
 	display: flex;
 	justify-content: center;
 	gap: .75rem;
@@ -170,40 +171,40 @@ article {
 	@media (min-width: 84rem) {
 		justify-self: end;
 	}
-}
-
-.social-logo {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 1.75rem;
-	height: 1.75rem;
-	text-indent: -100vw;
-	overflow: hidden;
-	border: solid thin var(--cl-neutral-100);
-	border-radius: 100%;
-	transition: border-color .3s ease-out;
-
-	@media (min-width: 84rem) {
-		width: 2.5rem;
-		height: 2.5rem;
-	}
-
-	&:hover {
-		border-color: var(--cl-accent-500);
-
-		path {
-			fill: var(--cl-accent-500);
-			transition: fill .3s ease-out;
-		}
-	}
-
-	svg {
-		width: auto;
-		height: .8rem;
-
+	
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.75rem;
+		height: 1.75rem;
+		text-indent: -100vw;
+		overflow: hidden;
+		border: solid thin var(--cl-neutral-100);
+		border-radius: 100%;
+		transition: border-color .3s ease-out;
+	
 		@media (min-width: 84rem) {
-			height: 1.125rem;
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	
+		&:hover {
+			border-color: var(--cl-accent-500);
+	
+			path {
+				fill: var(--cl-accent-500);
+				transition: fill .3s ease-out;
+			}
+		}
+	
+		svg {
+			width: auto;
+			height: .8rem;
+	
+			@media (min-width: 84rem) {
+				height: 1.125rem;
+			}
 		}
 	}
 }
