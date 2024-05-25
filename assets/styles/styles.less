@@ -65,7 +65,6 @@ body {
 	
 	@media (min-width: 84rem) {
 		text-align: initial;
-		background-size:cover;
 		background-image: url("../images/bg-desktop.svg");
 	}
 }
@@ -83,15 +82,18 @@ main {
 }
 
 .huddle-logo {
-	max-width: 120px;
-
+	width: 100%;
+	max-width: 7.5rem;
+	margin-inline-start: .25rem;
+	
 	@media (min-width: 84rem) {		
-		max-width: 12.5rem;
+		max-width: 12.3rem;
+		margin-inline-start: .125rem;
 	}
 }
 
 article {
-	margin-block-start: 4.375rem;
+	margin-block-start: 4.175rem;
 	
 	@media (min-width: 84rem) {	
 		margin-block-start: 6.5rem;
@@ -119,7 +121,7 @@ article {
 	
 		@media (min-width: 84rem) {
 			grid-column: 2;
-			margin-block-start: 2.5rem;
+			margin-block-start: 2rem;
 		}
 	}
 	
@@ -145,18 +147,19 @@ article {
 		box-shadow: rgba(0, 0, 0, 0.27) .063rem .188rem .313rem 0;
 		max-width: 12.5rem;
 		margin: 1.5rem auto 0;
-		padding-block: .69rem;
+		padding: .69rem;
 		transition: color, background;
 		transition-duration: .3s;
 		transition-timing-function: ease-out;
-	
+		
 		&:hover {
 			color: var(--cl-neutral-100);
 			background: var(--cl-accent-300);
 		}
-	
+		
 		@media (min-width: 84rem) {
-			margin-inline: 0;
+			margin: 1.5rem 0 0;
+			padding: .91rem;
 			box-shadow: rgba(0, 0, 0, 0.26) .125rem .25rem .563rem .188rem;
 		}
 	}
@@ -165,11 +168,13 @@ article {
 nav {
 	display: flex;
 	justify-content: center;
-	gap: .75rem;
+	gap: .65rem;
 	margin-top: 4rem;
-
+	
 	@media (min-width: 84rem) {
 		justify-self: end;
+		gap: 1rem;
+		margin-top: 1.75rem;
 	}
 	
 	a {
